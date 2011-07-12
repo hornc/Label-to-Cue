@@ -1,0 +1,15 @@
+Audacity label file to basic CUE converter
+
+ USAGE:
+   label2cue <label_file>.txt [[INITIAL_TRACK_NUMBER(default=1)] [TARGET_WAVE_FILE]] [ > output.cue ]
+
+This is a simple ruby script I created to convert track label exports from the opensource Audacity audio editor (http://audacity.sourceforge.net/) to .CUE sheets (http://en.wikipedia.org/wiki/Cue_sheet_%28computing%29) in order to burn a single .wav file directly to a multitrack CD.
+
+I had some recorded speeches which I had been tidying up in Audacity and already had the labels in place and exported, so I simplified the process of converting from seconds into MM:SS:CD_FRAMES and filling in the track names so I could easily burn to CD in one step.
+
+In the examples/ folder are an example input label file and corresponding output .CUE.
+
+To generate the output .CUE file:
+ruby label2cue.rb examples/input_example_audacity_labels.txt > examples/output.cue
+
+The label files I used were generated using Audacity 1.3.12 beta
