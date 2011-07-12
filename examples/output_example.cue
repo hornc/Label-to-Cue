@@ -1,0 +1,27 @@
+PERFORMER ""
+TITLE ""
+FILE "someaudiofile.wav" WAVE
+  TRACK 01 AUDIO
+	TITLE ""
+	INDEX 01 00:00:00
+  TRACK 02 AUDIO
+	TITLE "First track"
+	INDEX 01 00:00:00
+  TRACK 03 AUDIO
+	TITLE "Second track"
+	INDEX 01 11:38:27
+  TRACK 04 AUDIO
+	TITLE "Third track"
+	INDEX 01 13:48:62
+  TRACK 05 AUDIO
+	TITLE "Fourth track"
+	INDEX 01 19:16:64
+  TRACK 06 AUDIO
+	TITLE "Fifth track"
+	INDEX 01 21:32:12
+  TRACK 07 AUDIO
+	TITLE "It's track Six"
+	INDEX 01 28:50:07
+  TRACK 08 AUDIO
+	TITLE "Last track (bonus!)"
+	INDEX 01 29:42:22
