@@ -1,4 +1,3 @@
-
 HELP_TEXT = <<END
 
  Audacity label file to basic CUE converter
@@ -7,7 +6,7 @@ HELP_TEXT = <<END
  for Audacity labels see: http://audacity.sourceforge.net/onlinehelp-1.2/track_label.htm
 
  USAGE:
-   label2cue <label_file>.txt [[INITIAL_TRACK_NUMBER(default=1)] [TARGET_WAVE_FILE]] [ > output.cue ]
+   label2cue <label_file>.txt [[TARGET_WAVE_FILE] [INITIAL_TRACK_NUMBER(default=1)]] [ > output.cue ]
 
 END
 
@@ -19,25 +18,14 @@ end
 
 # Converts seconds (float) to cue file: mm:ss:ff , where ff is frames. 1s = 75 frames
 def convert(secs)
-  c = "#{pad(secs.to_i / 60)}:#{pad(secs.to_i % 60)}:#{pad((75 * (secs.to_f - secs.to_i)).to_i)}"
-  return c
-end
-
-# Pads a number string to 2 characters by adding a "0"
-def pad(n)
-  return (n.to_s.length == 1) ? "0#{n}" : n
+  s = secs.to_i
+  "%02d:%02d:%02d" % [s / 60, s % 60, 75 * (secs.to_f - s)]
 end
 
 label_file = ARGV[0]
+audio_file = ARGV[1]
+track      = ARGV[2].nil? ? 1 : ARGV[2].to_i  # Get starting track number
 
-# Get starting track number
-if !ARGV[1].nil?
-  track = ARGV[1].to_i
-else
-  track = 1
-end
-
-audio_file = ARGV[2]
 
 if File.exists?(label_file)
   f = File.new(label_file, "r")
@@ -48,7 +36,7 @@ if File.exists?(label_file)
 
   f.each_line do |l|
     l = l.split(/[\t\n]/)
-    puts "  TRACK #{pad(track)} AUDIO"
+    puts "  TRACK %02d AUDIO" % track
     puts "\tTITLE \"#{l[2]}\""
     puts "\tINDEX 01 #{convert(l[0])}"
     track += 1
@@ -57,6 +45,3 @@ if File.exists?(label_file)
 else
   puts "Audacity Label file #{label_file} not Found!"
 end
-
-
-
