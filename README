@@ -1,5 +1,20 @@
 Audacity label file to basic CUE converter
 
+Copyright 2011 Charles Horn
+
+  label2cue is free software: you can redistribute it and/or modify
+  it under the terms of the GNU General Public License as published by
+  the Free Software Foundation, either version 3 of the License, or
+  (at your option) any later version.
+
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+
+  You should have received a copy of the GNU General Public License
+  along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
  USAGE:
    label2cue <label_file>.txt [[TARGET_WAVE_FILE] [INITIAL_TRACK_NUMBER(default=1)]] [ > output.cue ]
 
@@ -13,3 +28,6 @@ To generate the output .CUE file:
 ruby label2cue.rb examples/input_example_audacity_labels.txt someaudiofile.wav > examples/output_example.cue
 
 The label files I used were generated using Audacity 1.3.12 beta
+
+The source for label2cue lives on GitHub at https://github.com/hornc/Label-to-Cue  
+Please feel free to message me (hornc) there if you have any suggestions for improvements.
