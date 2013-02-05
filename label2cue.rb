@@ -1,7 +1,24 @@
-HELP_TEXT = <<END
+#!/usr/bin/env ruby
 
+# Copyright 2011 Charles Horn
+#
+#  This program is free software: you can redistribute it and/or modify
+#  it under the terms of the GNU General Public License as published by
+#  the Free Software Foundation, either version 3 of the License, or
+#  (at your option) any later version.
+#
+#  This program is distributed in the hope that it will be useful,
+#  but WITHOUT ANY WARRANTY; without even the implied warranty of
+#  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#  GNU General Public License for more details.
+#
+#  You should have received a copy of the GNU General Public License
+#  along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+HELP_TEXT = <<END
+ 
  Audacity label file to basic CUE converter
- Charles Horn, March 2011
+ Copyright 2011 Charles Horn, Licensed under the GNU General Public License v.3
  Outputs to STDOUT
  for Audacity labels see: http://audacity.sourceforge.net/onlinehelp-1.2/track_label.htm
 
